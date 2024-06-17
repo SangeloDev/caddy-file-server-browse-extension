@@ -46,7 +46,7 @@
 		<meta charset="utf-8">
 		<meta name="color-scheme" content="light dark">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/glowinthedark/caddy-file-server-browse-extension/css/atelier-estuary-light.min.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SangeloDev/caddy-file-server-browse-extension/css/atelier-estuary-light.min.css">
 		<script src="https://unpkg.com/@highlightjs/cdn-assets@11.8.0/highlight.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <style>
@@ -79,7 +79,6 @@ td img {
 }
 
 body,
-a,
 svg,
 .layout.current,
 .layout.current svg,
@@ -88,16 +87,25 @@ svg,
 	text-decoration: none;
 }
 
+a {
+	color: #0064c9;
+}
+
 .wrapper {
 	max-width: 1200px;
 	margin-left: auto;
 	margin-right: auto;
+	padding-bottom: 5em;
 }
 
 header,
 .meta {
 	padding-left: 5%;
 	padding-right: 5%;
+}
+
+header .wrapper {
+	padding-bottom: 0;
 }
 
 td a {
@@ -122,13 +130,13 @@ td a:hover {
 	color: #0095e4;
 }
 
-td a:visited {
+/* td a:visited {
 	color: #800080;
 }
 
 td a:visited:hover {
 	color: #b900b9;
-}
+} */
 
 th:first-child,
 td:first-child {
@@ -194,6 +202,10 @@ h1 a:hover {
 
 h1 a:first-child {
 	margin: 0;
+}
+
+h2.info {
+	padding: 20px 0 20px 0;
 }
 
 header,
@@ -418,12 +430,17 @@ footer {
 #popup1.day .popup,
 #popup1.night .popup {
 	margin: 3em auto;
-	padding: 20px;
+	padding: 0 10px 10px 10px;
 	border-radius: 5px;
 	width: 90%;
 	height: 90%;
 	position: relative;
-	transition: all 1s ease-in-out;
+	transition: all 0.25s ease-in-out;
+	overflow: hidden;
+}
+
+.popup .content {
+	height: 92% !important;
 }
 
 #popup1.day .popup {
@@ -451,8 +468,9 @@ footer {
 	text-decoration: none;
 	z-index: 1000;
 }
+
 .popup .max:hover, .popup .close:hover {
-	color: #06D85F;
+	color: #888 !important;
 }
 
 .popup .close {
@@ -562,14 +580,59 @@ video::cue {
 	overflow: hidden;
 	overscroll-behavior: none;
 	overflow-x: hidden;
-	overflow-y: scroll !important;
+	overflow-y: hidden !important;
 	position: fixed;
+	width: 100%;
 }
 
 .maximized {
-		width: 100% !important;
-		height: 100% !important;
-		margin: auto !important;
+	width: 100% !important;
+	height: 100% !important;
+	margin: auto !important;
+}
+
+/* markdown styling */
+.content {
+	padding: 0 1em 0 1em;
+}
+
+.content h1,
+.content h2,
+.content h3 {
+	margin: 1em 0 1em 0;
+}
+
+.content p {
+	margin: 0.5em 0 0.5em 0;
+}
+
+.content ul {
+	margin: 1em 0 1em 0;
+}
+
+.content li {
+	list-style: inside;
+}
+
+.content code {
+	border-radius: 5px;
+	background-color: #efefef;
+	padding: 0.25em;
+}
+
+.content pre {
+	border-radius: 5px;
+	padding: 1em;
+	width: 99%;
+	background-color: #efefef;
+}
+
+.content pre code {
+	padding: 0;
+}
+
+.content a {
+	color: #006ed3;
 }
 
 @media (max-width: 600px) {
@@ -609,8 +672,9 @@ video::cue {
 		margin: auto;
 	}
 
-	#popup1 .close, #popup1 .max {
-	font-size: 25px;
+	.popup a.close, .popup a.max {
+		font-size: 25px;
+		color: white !important;
 	}
 }
 
@@ -625,7 +689,6 @@ video::cue {
 	}
 
 	body,
-	a,
 	svg,
 	.layout.current,
 	.layout.current svg,
@@ -652,6 +715,18 @@ video::cue {
 		background-color: #101720;
 	}
 
+	.popup {
+		background-color: #171b1f !important;
+	}
+
+	.popup .max, .popup .close {
+		color: #888 !important;
+	}
+
+	.popup .max:hover, .popup .close:hover {
+		color: #4f4f4f !important;
+	}
+	
 	tbody tr:hover,
 	.grid .entry a:hover {
 		background-color: #162030;
@@ -672,13 +747,13 @@ video::cue {
 		color: white;
 	}
 
-	td a:visited {
+	/* td a:visited {
 		color: #cd53cd;
 	}
 
 	td a:visited:hover {
 		color: #f676f6;
-	}
+	} */
 
 	#search-icon {
 		color: #7798c4;
@@ -710,6 +785,15 @@ video::cue {
 	}
 	.fixedplayer {
 		background-color: #333;
+	}
+
+	/* markdown styling */
+	.content code,
+	.content pre {
+		background-color: #2c3136;
+	}
+	.content a {
+		color: #abc8e3;
 	}
 }
 

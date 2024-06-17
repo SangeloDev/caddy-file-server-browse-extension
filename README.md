@@ -1,5 +1,8 @@
 ### caddy file_server custom `browse.html` template with media extensions
 
+**fork of [glowinthedark](https://github.com/glowinthedark/caddy-file-server-browse-extension)'s browse.html with a few personal tweaks and fixes**
+
+
 Customized template for caddy [**`file_server`**](https://caddyserver.com/docs/caddyfile/directives/file_server). Compared to caddy's default [browse.html](https://github.com/caddyserver/caddy/blob/master/modules/caddyhttp/fileserver/browse.html) this template offers the following extra features:
 
 - play all audios inline (with automatic sequential autoplay)
@@ -22,13 +25,17 @@ http:// {
     }
 }
 ```
+
 ### Screenshots
 
-##### inline audio player 
-![](img/caddy_file_server.png)
+#### inline audio player
 
-##### markdown renderer
-![](img/caddy_file_server_markdown.png)
+![audio player](img/caddy_file_server.png)
 
-##### source file highlighter
-![](img/caddy_file_server_highlight.png)
+#### markdown renderer
+
+![markdown renderer](img/caddy_file_server_markdown.png)
+
+#### source file highlighter
+
+![source file highlighter](img/caddy_file_server_highlight.png)
