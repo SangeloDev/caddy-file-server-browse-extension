@@ -15,7 +15,7 @@ Customized template for caddy [**`file_server`**](https://caddyserver.com/docs/c
 
 ### Usage
 
-In your `Caddyfile` set the [**`browse`**](https://caddyserver.com/docs/caddyfile/directives/file_server#syntax) subdirective under `file_server` to point to the custom `browse.html` ([view source](https://github.com/glowinthedark/caddy-file-server-browse-extension/blob/master/browse.html)) file:
+In your `Caddyfile` set the [**`browse`**](https://caddyserver.com/docs/caddyfile/directives/file_server#syntax) subdirective under `file_server` to point to the custom `browse.html` ([view source](https://github.com/SangeloDev/caddy-file-server-browse-extension/blob/master/browse.html)) file:
 
 ```Caddyfile
 http:// {
